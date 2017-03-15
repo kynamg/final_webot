@@ -1,0 +1,296 @@
+#VRML_SIM V8.4.0 utf8
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.992143 -0.115928 0.047046 1.63851
+  position -0.365296 2.33124 -0.111582
+}
+Supervisor {
+  children [
+    Receiver {
+    }
+    Emitter {
+    }
+    Display {
+    }
+  ]
+  controller "neural_net_supervisor"
+}
+DEF OPEN_FLOOR1 SolidBox {
+  translation 0 0 -0.3
+  rotation 0 1 0 1.5708
+  size 0.5 0.01 0.2
+  appearance Appearance {
+    material Material {
+    }
+    texture ImageTexture {
+      url [
+        "H:/Webots/black.png"
+      ]
+    }
+  }
+}
+DEF ROBOT E-puck {
+  hidden translation_1 -0.0260008 0.020004 -6.94032e-07
+  hidden rotation_1 1 3.23183e-05 1.35716e-05 -1.69931
+  hidden translation_2 0.0260009 0.0200044 -5.97067e-07
+  hidden rotation_2 1 1.88627e-06 2.06151e-06 2.95648
+  translation -0.278044 0.00496491 -0.00597415
+  rotation 0.999928 -0.000265352 -0.011986 0.000934806
+  controller "neural"
+  groundSensorsSlot [
+    E-puckGroundSensors {
+    }
+  ]
+}
+DEF OPEN_FLOOR2 SolidBox {
+  translation 0 0 0.3
+  rotation 0 1 0 1.5708
+  size 0.5 0.01 0.2
+  appearance Appearance {
+    material Material {
+    }
+    texture ImageTexture {
+      url [
+        "H:/Webots/black.png"
+      ]
+    }
+  }
+}
+DEF CLOSED_FLOOR SolidBox {
+  size 1.1 0.01 0.2
+  appearance Appearance {
+    material Material {
+    }
+    texture ImageTexture {
+      url [
+        "H:/Webots/black.png"
+      ]
+    }
+  }
+}
+DEF WALL Solid {
+  children [
+    Shape {
+    }
+  ]
+  boundingObject Group {
+    children [
+      DEF WALL_SIDE_4_BOUND Transform {
+        translation 0.300764 0.15 -0.0542735
+        rotation 0 1 0 1.5708
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 1 1 1
+                specularColor 1 1 1
+              }
+            }
+            geometry Box {
+              size 0.01 0.3 0.5
+            }
+          }
+        ]
+      }
+      DEF WALL_SIDE_3_BOUND Transform {
+        translation -0.3 0.15 -0.0552374
+        rotation 0 1 0 1.5708
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 1 1 1
+                specularColor 1 1 1
+              }
+            }
+            geometry Box {
+              size 0.01 0.3 0.5
+            }
+          }
+        ]
+      }
+      DEF WALL_SIDE_2_BOUND Transform {
+        translation 0.30012 0.15 0.0548879
+        rotation 0 1 0 1.5708
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 1 1 1
+                specularColor 1 1 1
+              }
+            }
+            geometry Box {
+              size 0.01 0.3 0.5
+            }
+          }
+        ]
+      }
+      DEF WALL_SIDE_1_BOUND Transform {
+        translation -0.295229 0.15 0.0546096
+        rotation 0 1 0 1.5708
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 1 1 1
+                specularColor 1 1 1
+              }
+            }
+            geometry Box {
+              size 0.01 0.3 0.5
+            }
+          }
+        ]
+      }
+      DEF WALL_END_2_BOUND Transform {
+        translation -0.55 0.15 0
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 1 1 1
+                specularColor 1 1 1
+              }
+            }
+            geometry Box {
+              size 0.01 0.3 0.1
+            }
+          }
+        ]
+      }
+      DEF WALL_END_1_BOUND Transform {
+        translation 0.55 0.15 0
+        children [
+          Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 1 1 1
+                specularColor 1 1 1
+              }
+            }
+            geometry Box {
+              size 0.01 0.3 0.1
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+DEF WALL_END_2 SolidBox {
+  translation -0.55 0.15 0
+  size 0.01 0.3 0.2
+  appearance Appearance {
+    material Material {
+    }
+    texture ImageTexture {
+      url [
+        "textures/desktop_wood.jpg"
+      ]
+    }
+  }
+}
+DEF WALL_END_1 SolidBox {
+  translation 0.55 0.15 0
+  size 0.01 0.3 0.2
+  appearance Appearance {
+    material Material {
+    }
+    texture ImageTexture {
+      url [
+        "textures/desktop_wood.jpg"
+      ]
+    }
+  }
+}
+DEF WALL_SIDE_3 SolidBox {
+  translation -0.323511 0.15 -0.101904
+  rotation 0 1 0 1.5708
+  size 0.01 0.3 0.45
+  appearance Appearance {
+    material Material {
+    }
+    texture ImageTexture {
+      url [
+        "textures/desktop_wood.jpg"
+      ]
+    }
+  }
+}
+DEF WALL_SIDE_4 SolidBox {
+  translation 0.327207 0.15 -0.100133
+  rotation 0 1 0 1.5708
+  size 0.01 0.3 0.45
+  appearance Appearance {
+    material Material {
+    }
+    texture ImageTexture {
+      url [
+        "textures/desktop_wood.jpg"
+      ]
+    }
+  }
+}
+DEF WALL_SIDE_1 SolidBox {
+  translation -0.3297 0.15 0.1037
+  rotation 0 1 0 1.5708
+  size 0.01 0.3 0.45
+  appearance Appearance {
+    material Material {
+    }
+    texture ImageTexture {
+      url [
+        "textures/desktop_wood.jpg"
+      ]
+    }
+  }
+}
+DEF WALL_SIDE_2 SolidBox {
+  translation 0.328331 0.15 0.103408
+  rotation 0 1 0 1.5708
+  size 0.01 0.3 0.45
+  appearance Appearance {
+    material Material {
+    }
+    texture ImageTexture {
+      url [
+        "textures/desktop_wood.jpg"
+      ]
+    }
+  }
+}
+DEF INFINITE_PLANE Floor {
+  translation 0 -0.009 0
+  size 2 2
+  texture [
+    "H:/Webots/white.png"
+  ]
+}
+DEF LIGHTING PointLight {
+  ambientIntensity 0.6
+  intensity 0.3
+  location 0.75 0.5 0.5
+}
+DEF LIGHTING PointLight {
+  ambientIntensity 0.6
+  intensity 0.3
+  location -0.5 0.5 0.35
+}
+DEF LIGHTING PointLight {
+  ambientIntensity 0.6
+  intensity 0.3
+  location 0.45 0.5 -0.5
+}
+DEF LIGHTING PointLight {
+  ambientIntensity 0.6
+  intensity 0.3
+  location -0.5 0.5 -0.35
+}
+Background {
+  skyColor [
+    0.3 0.5 1
+  ]
+}
